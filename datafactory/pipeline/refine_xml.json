@@ -51,7 +51,7 @@
 					},
 					"activities": [
 						{
-							"name": "Azure Function1",
+							"name": "ConvertXmlToJson",
 							"type": "AzureFunctionActivity",
 							"dependsOn": [],
 							"policy": {
