@@ -80,7 +80,7 @@
 							},
 							"activities": [
 								{
-									"name": "Azure Function1",
+									"name": "ConvertXmlToJson",
 									"type": "AzureFunctionActivity",
 									"dependsOn": [],
 									"policy": {
@@ -99,6 +99,39 @@
 										},
 										"body": {
 											"value": "@concat('{\"File\":\"',  item().name, '\"}')",
+											"type": "Expression"
+										}
+									},
+									"linkedServiceName": {
+										"referenceName": "AzureFunction1",
+										"type": "LinkedServiceReference"
+									}
+								},
+								{
+									"name": "WriteJson",
+									"type": "AzureFunctionActivity",
+									"dependsOn": [
+										{
+											"activity": "ConvertXmlToJson",
+											"dependencyConditions": [
+												"Succeeded"
+											]
+										}
+									],
+									"policy": {
+										"timeout": "7.00:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"functionName": "WriteJsonFunction",
+										"method": "POST",
+										"headers": {},
+										"body": {
+											"value": "@concat('{\"File\":\"',  guid(), '.xml, \"Payload\":', activity('ConvertXmlToJson').output, '\"}')",
 											"type": "Expression"
 										}
 									},
