@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Get Metadata1",
+				"name": "ListFiles",
 				"type": "GetMetadata",
 				"dependsOn": [],
 				"policy": {
@@ -19,9 +19,7 @@
 						"referenceName": "XmlRawSource",
 						"type": "DatasetReference"
 					},
-					"fieldList": [
-						"childItems"
-					],
+					"fieldList": [],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
 						"recursive": true
