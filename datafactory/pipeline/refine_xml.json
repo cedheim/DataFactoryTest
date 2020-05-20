@@ -63,7 +63,7 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"functionName": "api/XmlToJsonFunction",
+								"functionName": "/api/XmlToJsonFunction",
 								"method": "POST",
 								"headers": {
 									"Content-Type": "application/json"
