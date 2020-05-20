@@ -19,7 +19,9 @@
 						"referenceName": "XmlRawSource",
 						"type": "DatasetReference"
 					},
-					"fieldList": [],
+					"fieldList": [
+						"itemName"
+					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings"
 					},
