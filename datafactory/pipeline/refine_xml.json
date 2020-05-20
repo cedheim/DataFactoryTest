@@ -102,7 +102,7 @@
 								"functionName": "WriteJsonFunction",
 								"method": "POST",
 								"body": {
-									"value": "@concat('{\"File\":\"',  guid(), '.xml\", \"Payload\":', activity('ConvertXmlToJson').output, '}')",
+									"value": "@concat('{\"File\":\"', item().name, '\", \"Payload\":', activity('ConvertXmlToJson').output, '}')",
 									"type": "Expression"
 								}
 							},
