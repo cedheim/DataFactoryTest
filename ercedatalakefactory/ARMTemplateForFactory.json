@@ -78,6 +78,7 @@
 								"value": "@activity('ListFiles').output.childItems",
 								"type": "Expression"
 							},
+							"batchCount": 10,
 							"activities": [
 								{
 									"name": "ConvertXmlToJson",
@@ -131,7 +132,7 @@
 										"method": "POST",
 										"headers": {},
 										"body": {
-											"value": "@concat('{\"File\":\"',  guid(), '.xml\", \"Payload\":', activity('ConvertXmlToJson').output, '}')",
+											"value": "@concat('{\"File\":\"', item().name, '\", \"Payload\":', activity('ConvertXmlToJson').output, '}')",
 											"type": "Expression"
 										}
 									},
