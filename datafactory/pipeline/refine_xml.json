@@ -20,10 +20,11 @@
 						"type": "DatasetReference"
 					},
 					"fieldList": [
-						"itemName"
+						"childItems"
 					],
 					"storeSettings": {
-						"type": "AzureBlobFSReadSettings"
+						"type": "AzureBlobFSReadSettings",
+						"recursive": true
 					},
 					"formatSettings": {
 						"type": "BinaryReadSettings"
