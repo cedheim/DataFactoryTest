@@ -170,13 +170,13 @@
 									},
 									"userProperties": [],
 									"typeProperties": {
-										"functionName": "/api/XmlToJsonFunction",
+										"functionName": "XmlToJsonFunction",
 										"method": "POST",
 										"headers": {
 											"Content-Type": "application/json"
 										},
 										"body": {
-											"value": "{ \"File\": \"@item().name\" }",
+											"value": "@concat('{\"File\":\"',  item().name, '\"}')",
 											"type": "Expression"
 										}
 									},
